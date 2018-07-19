@@ -5,17 +5,34 @@
     
   <url>
     <loc>https://albertter.github.io/2018/07/19/python%E4%BD%BF%E7%94%A8pandas%E8%BF%9B%E8%A1%8C%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%AE%9E%E4%BE%8B/</loc>
-    <lastmod>2018-07-19T07:38:35.954Z</lastmod>
+    <lastmod>2018-07-19T08:14:11.495Z</lastmod>
     <data>
         <display>
         <title>python使用pandas进行数据分析实例</title>
         <pubTime>2018-07-19T06:57:32.000Z</pubTime>
         
-        <tag>技术</tag>
-         
         <tag>python</tag>
          
+        <tag>技术</tag>
+         
         <tag>数据分析</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://albertter.github.io/2018/07/19/hexo%E6%97%A0%E6%B3%95%E9%83%A8%E7%BD%B2%E5%88%B0github%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</loc>
+    <lastmod>2018-07-19T08:13:18.929Z</lastmod>
+    <data>
+        <display>
+        <title>hexo无法部署到github解决办法</title>
+        <pubTime>2018-07-19T08:03:56.000Z</pubTime>
+        
+        <tag>github</tag>
          
          
            
@@ -35,9 +52,9 @@
         <title>常用Markdown语法教程</title>
         <pubTime>2017-08-10T03:32:50.000Z</pubTime>
         
-        <tag>Markdown</tag>
-         
         <tag>技术</tag>
+         
+        <tag>Markdown</tag>
          
          
            
