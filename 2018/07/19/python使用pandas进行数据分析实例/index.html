@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="python,技术,数据分析," />
 
 
 
@@ -94,17 +94,20 @@
 
 
 
-<meta name="description" content="大家好，欢迎来到我的blog。">
+<meta name="description" content="python使用pandas进行数据分析实例 https://www.kaggle.com/wendykan/lending-club-loan-data数据集包含2007-2015年间的借贷数据，包含当前借贷状态（Current, Late, Fully Paid,等）以及最新的付账信息。额外的信息包括：信用评分、金融咨询次数、住址邮政编码、所在州等。该数据集包括约890,000条记录，75列数">
+<meta name="keywords" content="python,技术,数据分析">
 <meta property="og:type" content="article">
-<meta property="og:title" content="HELLO">
-<meta property="og:url" content="https://albertter.github.io/2017/08/07/HELLO/index.html">
+<meta property="og:title" content="python使用pandas进行数据分析实例">
+<meta property="og:url" content="https://albertter.github.io/2018/07/19/python使用pandas进行数据分析实例/index.html">
 <meta property="og:site_name" content="albert&#39;s blog">
-<meta property="og:description" content="大家好，欢迎来到我的blog。">
+<meta property="og:description" content="python使用pandas进行数据分析实例 https://www.kaggle.com/wendykan/lending-club-loan-data数据集包含2007-2015年间的借贷数据，包含当前借贷状态（Current, Late, Fully Paid,等）以及最新的付账信息。额外的信息包括：信用评分、金融咨询次数、住址邮政编码、所在州等。该数据集包括约890,000条记录，75列数">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-09T17:19:43.281Z">
+<meta property="og:image" content="https://albertter.github.io/images/loan_analysis.png">
+<meta property="og:updated_time" content="2018-07-19T07:38:35.954Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="HELLO">
-<meta name="twitter:description" content="大家好，欢迎来到我的blog。">
+<meta name="twitter:title" content="python使用pandas进行数据分析实例">
+<meta name="twitter:description" content="python使用pandas进行数据分析实例 https://www.kaggle.com/wendykan/lending-club-loan-data数据集包含2007-2015年间的借贷数据，包含当前借贷状态（Current, Late, Fully Paid,等）以及最新的付账信息。额外的信息包括：信用评分、金融咨询次数、住址邮政编码、所在州等。该数据集包括约890,000条记录，75列数">
+<meta name="twitter:image" content="https://albertter.github.io/images/loan_analysis.png">
 
 
 
@@ -133,13 +136,13 @@
 
 
 
-  <link rel="canonical" href="https://albertter.github.io/2017/08/07/HELLO/"/>
+  <link rel="canonical" href="https://albertter.github.io/2018/07/19/python使用pandas进行数据分析实例/"/>
 
 
 
 
 
-  <title>HELLO | albert's blog</title>
+  <title>python使用pandas进行数据分析实例 | albert's blog</title>
   
 
 
@@ -292,7 +295,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://albertter.github.io/2017/08/07/HELLO/">
+    <link itemprop="mainEntityOfPage" href="https://albertter.github.io/2018/07/19/python使用pandas进行数据分析实例/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="albert">
@@ -309,7 +312,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">HELLO</h1>
+          <h1 class="post-title" itemprop="name headline">python使用pandas进行数据分析实例</h1>
         
 
         <div class="post-meta">
@@ -321,8 +324,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-07T15:49:20+08:00">
-                2017-08-07
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-19T14:57:32+08:00">
+                2018-07-19
               </time>
             
 
@@ -340,9 +343,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/08/07/HELLO/#comments" itemprop="discussionUrl">
+                <a href="/2018/07/19/python使用pandas进行数据分析实例/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/08/07/HELLO/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2018/07/19/python使用pandas进行数据分析实例/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -394,7 +397,28 @@
       
 
       
-        <p>大家好，欢迎来到我的blog。</p>
+        <h1 id="python使用pandas进行数据分析实例"><a href="#python使用pandas进行数据分析实例" class="headerlink" title="python使用pandas进行数据分析实例"></a>python使用pandas进行数据分析实例</h1><blockquote>
+<p><a href="https://www.kaggle.com/wendykan/lending-club-loan-data" target="_blank" rel="external">https://www.kaggle.com/wendykan/lending-club-loan-data</a><br>数据集包含2007-2015年间的借贷数据，包含当前借贷状态（Current, Late, Fully Paid,等）以及最新的付账信息。<br>额外的信息包括：信用评分、金融咨询次数、住址邮政编码、所在州等。<br>该数据集包括约890,000条记录，75列数据。</p>
+<ol>
+<li>查看不同借贷状态的数据量</li>
+<li>按月份统计借贷金额总量</li>
+<li>按地区（州）统计借贷金额总量</li>
+<li>借贷评级、期限和利率(默认实际利率)的关系分析</li>
+</ol>
+</blockquote>
+<h2 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h2><p>首先导入模块</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</div><div class="line"><span class="keyword">from</span> matplotlib <span class="keyword">import</span> pyplot <span class="keyword">as</span> plt</div></pre></td></tr></table></figure>
+<p>使用pandas的read_csv读取csv文件</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">df = pd.read_csv(<span class="string">'loan.csv'</span>, low_memory = <span class="keyword">False</span>)</div></pre></td></tr></table></figure>
+<h4 id="1-查看不同借贷状态的数据量"><a href="#1-查看不同借贷状态的数据量" class="headerlink" title="1.查看不同借贷状态的数据量"></a>1.查看不同借贷状态的数据量</h4><p>pandas 的value_counts()函数可以对Series里面的每个值进行计数并且排序。返回series。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_loan_status</span><span class="params">(df)</span>:</span></div><div class="line">    loan_status = df[<span class="string">'loan_status'</span>].value_counts()</div><div class="line">    print(loan_status)</div><div class="line">    <span class="keyword">return</span> loan_status</div></pre></td></tr></table></figure>
+<h4 id="2-按月份统计贷款总量"><a href="#2-按月份统计贷款总量" class="headerlink" title="2.按月份统计贷款总量"></a>2.按月份统计贷款总量</h4><p>首先把日期列中的月份提取，再按月份对贷款量分组，最后求和，返回series。<br><a href="https://pandas.pydata.org/pandas-docs/stable/generated/pandas.to_datetime.html" target="_blank" rel="external">to_datetime</a>用于获取指定的日期时间</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_total_loan_by_month</span><span class="params">(df)</span>:</span></div><div class="line">    df[<span class="string">'issue_d'</span>] = pd.to_datetime(df[<span class="string">'issue_d'</span>]).dt.month</div><div class="line">    month_group = df[<span class="string">'loan_amnt'</span>].groupby(df[<span class="string">'issue_d'</span>])</div><div class="line">    total_loan_by_month = month_group.sum()</div><div class="line">    print(total_loan_by_month)</div><div class="line">    <span class="keyword">return</span> total_loan_by_month</div></pre></td></tr></table></figure>
+<h4 id="3-按地区（州）统计借贷金额总量"><a href="#3-按地区（州）统计借贷金额总量" class="headerlink" title="3.按地区（州）统计借贷金额总量"></a>3.按地区（州）统计借贷金额总量</h4><p>把数据按地区对贷款量分组，再求和，返回series。<br>groupby是非常高效的分组h函数。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_total_loan_by_state</span><span class="params">(df)</span>:</span></div><div class="line">    addr_state_group = df[<span class="string">'loan_amnt'</span>].groupby(df[<span class="string">'addr_state'</span>])</div><div class="line">    total_loan_by_state = addr_state_group.sum()</div><div class="line">    print(total_loan_by_state)</div><div class="line">    <span class="keyword">return</span> total_loan_by_state</div></pre></td></tr></table></figure>
+<h4 id="4-借贷评级、期限和利率-默认实际利率-的关系分析"><a href="#4-借贷评级、期限和利率-默认实际利率-的关系分析" class="headerlink" title="4.借贷评级、期限和利率(默认实际利率)的关系分析"></a>4.借贷评级、期限和利率(默认实际利率)的关系分析</h4><p>评级为x轴，利率为y轴，绘制散点图，期限为点的颜色。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">analysis</span><span class="params">(df)</span>:</span></div><div class="line">    term = df[<span class="string">'term'</span>].tolist()</div><div class="line">    int_rate = df[<span class="string">'int_rate'</span>].tolist()</div><div class="line">    grade = df[<span class="string">'grade'</span>].tolist()</div><div class="line">    colors = []</div><div class="line">    <span class="keyword">for</span> item <span class="keyword">in</span> term:</div><div class="line">        colors.append(int(item[:<span class="number">2</span>]))</div><div class="line">    plt.scatter(grade, int_rate, c = colors, alpha = <span class="number">0.5</span>)</div><div class="line">    plt.show()</div><div class="line">    print(grade)</div><div class="line">    print(term)</div><div class="line">    print(int_rate)</div></pre></td></tr></table></figure>
+<p>绘制散点图效果如下：<br><img src="/images/loan_analysis.png" alt="散点图"></p>
 
       
     </div>
@@ -415,7 +439,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://albertter.github.io/2017/08/07/HELLO/" title="HELLO">https://albertter.github.io/2017/08/07/HELLO/</a>
+    <a href="https://albertter.github.io/2018/07/19/python使用pandas进行数据分析实例/" title="python使用pandas进行数据分析实例">https://albertter.github.io/2018/07/19/python使用pandas进行数据分析实例/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -428,6 +452,16 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/python/" rel="tag"># python</a>
+          
+            <a href="/tags/技术/" rel="tag"># 技术</a>
+          
+            <a href="/tags/数据分析/" rel="tag"># 数据分析</a>
+          
+        </div>
+      
 
       
       
@@ -437,15 +471,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2017/08/10/常用MarkDown语法教程/" rel="next" title="常用Markdown语法教程">
+                <i class="fa fa-chevron-left"></i> 常用Markdown语法教程
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/08/10/常用MarkDown语法教程/" rel="prev" title="常用Markdown语法教程">
-                常用Markdown语法教程 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -504,8 +538,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
@@ -593,6 +636,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#python使用pandas进行数据分析实例"><span class="nav-number">1.</span> <span class="nav-text">python使用pandas进行数据分析实例</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#过程"><span class="nav-number">1.1.</span> <span class="nav-text">过程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-查看不同借贷状态的数据量"><span class="nav-number">1.1.0.1.</span> <span class="nav-text">1.查看不同借贷状态的数据量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-按月份统计贷款总量"><span class="nav-number">1.1.0.2.</span> <span class="nav-text">2.按月份统计贷款总量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-按地区（州）统计借贷金额总量"><span class="nav-number">1.1.0.3.</span> <span class="nav-text">3.按地区（州）统计借贷金额总量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-借贷评级、期限和利率-默认实际利率-的关系分析"><span class="nav-number">1.1.0.4.</span> <span class="nav-text">4.借贷评级、期限和利率(默认实际利率)的关系分析</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -755,9 +814,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'https://albertter.github.io/2017/08/07/HELLO/';
-          this.page.identifier = '2017/08/07/HELLO/';
-          this.page.title = 'HELLO';
+          this.page.url = 'https://albertter.github.io/2018/07/19/python使用pandas进行数据分析实例/';
+          this.page.identifier = '2018/07/19/python使用pandas进行数据分析实例/';
+          this.page.title = 'python使用pandas进行数据分析实例';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://albertter.disqus.com/embed.js';
