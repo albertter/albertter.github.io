@@ -12,5 +12,5 @@ Disallow: /fonts/
 Disallow: /vendors/
 Disallow: /fancybox/
 
-Sitemap: http://chuzhen.ml/sitemap.xml
-Sitemap: http://chuzhen.ml/baidusitemap.xml
+Sitemap: https://albertter.github.io/sitemap.xml
+Sitemap: https://albertter.github.io/baidusitemap.xml
