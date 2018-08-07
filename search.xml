@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title><![CDATA[flask框架的简单使用]]></title>
-    <url>%2Ftitle%2F</url>
+    <url>%2F2018-08-06-flask%E6%A1%86%E6%9E%B6%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8.html</url>
     <content type="text"><![CDATA[flask简介Flask是一个使用Python编写的轻量级Web应用框架。基于Werkzeug WSGI工具箱和Jinja2模板引擎。Flask使用BSD授权。 aqi爬虫Flask通过Python的装饰器在内部自动地把URL和函数给关联起来Template目录下为模板html文件，嵌入了一些变量和指令，然后，根据我们传入的数据，替换后，得到最终的HTML，发送给用户。 123456789101112131415161718192021222324252627282930313233num = int(request.form[&apos;num&apos;])pollutant = int(request.form[&apos;pollutant&apos;])aqi.py向pm25.in网站爬取所有城市的空气信息def get_city_aqi(city_pingyin): url = &apos;http://pm25.in&apos; + city_pingyin url_text = requests.get(url).text soup = BeautifulSoup(url_text, &apos;html.parser&apos;) div_list = soup.find_all(&quot;div&quot;, &#123;&apos;class&apos;: &apos;span1&apos;&#125;) # 当前城市所有的污染物的值 8 city_aqi = [] for i in range(8): div_content = div_list[i] caption = div_content.find(&apos;div&apos;, &#123;&apos;class&apos;: &apos;caption&apos;&#125;).text.strip() # 标题 value = div_content.find(&apos;div&apos;, &#123;&apos;class&apos;: &apos;value&apos;&#125;).text.strip() # value value = float(value) city_aqi.append((caption, value)) return city_aqidef get_all_cities(): url = &apos;http://pm25.in/&apos; city_list = [] r = requests.get(url) soup = BeautifulSoup(r.text, &apos;html.parser&apos;) city_div = soup.find_all(&apos;div&apos;, &#123;&apos;class&apos;: &apos;bottom&apos;&#125;)[1] # 全部城市的div city_link_list = city_div.find_all(&apos;a&apos;) # 所有的城市的a for city_link in city_link_list: city_name = city_link.text # 城市的名字 city_pingyin = city_link[&apos;href&apos;] # 城市的拼音 city_list.append((city_name, city_pingyin)) print(city_name) return city_list 然后对选定的污染物进行排序 1result.sort(key = lambda k: k[1][pollutant_no][1]) 爬虫爬取的数据变量通过render_template()传递给模板，渲染成用户看到的html网页。 1return render_template('aqi.html', result = result, num = num) result为爬虫数据，num为显示的城市数量模板把result解析显示在table里。 数据抓取器前端输入url和关键字，以post方式提交表单flask app.py 12345678910111213141516171819202122@app.route('/', methods = ['GET', 'POST'])def hello_world(): result = [] keyword = '' if request.method == 'POST': url = request.form['url'] keyword = request.form['keyword'] result = crawler(url, keyword) return render_template('index.html', result = result, keyword = keyword)调用crawler函数爬到网页标题和链接，并返回。def crawler(url, keyword): data = requests.get(url).content soup = BeautifulSoup(data, 'html.parser') titles = soup.find_all('a') info = [] for title in titles: result = title.text.find(keyword) if result != -1: text = title.text href = title['href'] info.append((text, href)) return info 通过render_template把变量传递给模板，模板被渲染为html呈现给用户。 项目地址flask-aqi-crawler]]></content>
       <categories>
         <category>python</category>
@@ -15,7 +15,7 @@
   </entry>
   <entry>
     <title><![CDATA[hexo无法部署到github解决办法]]></title>
-    <url>%2Ftitle%2F</url>
+    <url>%2F2018-07-19-hexo%E6%97%A0%E6%B3%95%E9%83%A8%E7%BD%B2%E5%88%B0github%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95.html</url>
     <content type="text"><![CDATA[刚才部署hexo的时候，出现了报错： 12345678910111213141516bash: /dev/tty: No such device or addresserror: failed to execute prompt script (exit code 1)fatal: could not read Username for &apos;https://github.com&apos;: No errorFATAL Something&apos;s wrong. Maybe you can find the solution here: http://hexo.io/docs/troubleshooting.htmlError: fatal: HttpRequestException encountered. ��������ʱ����bash: /dev/tty: No such device or addresserror: failed to execute prompt script (exit code 1)fatal: could not read Username for &apos;https://github.com&apos;: No error at ChildProcess.&lt;anonymous&gt; (D:\hexo\node_modules\hexo-util\lib\spawn.js:37:17) at emitTwo (events.js:126:13) at ChildProcess.emit (events.js:214:7) at ChildProcess.cp.emit (D:\hexo\node_modules\cross-spawn\lib\enoent.js:40:29) at maybeClose (internal/child_process.js:925:16) at Process.ChildProcess._handle.onexit (internal/child_process.js:209:5) 解决办法如下：修改hexo安装目录下的_config.yml文件，找到Deployment： 1234deploy: type: git repo: https://github.com/yourname/yourname.github.io.git branch: master 将repo修改为： 1repo: https://&#123;yourname&#125;:&#123;yourpassword&#125;@github.com/&#123;yourname&#125;/&#123;yourname&#125;.github.io.git 亲测可行。]]></content>
       <categories>
         <category>hexo相关</category>
@@ -27,7 +27,7 @@
   </entry>
   <entry>
     <title><![CDATA[python使用pandas进行数据分析实例]]></title>
-    <url>%2Ftitle%2F</url>
+    <url>%2F2018-07-19-python%E4%BD%BF%E7%94%A8pandas%E8%BF%9B%E8%A1%8C%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%AE%9E%E4%BE%8B.html</url>
     <content type="text"><![CDATA[问题 https://www.kaggle.com/wendykan/lending-club-loan-data数据集包含2007-2015年间的借贷数据，包含当前借贷状态（Current, Late, Fully Paid,等）以及最新的付账信息。额外的信息包括：信用评分、金融咨询次数、住址邮政编码、所在州等。该数据集包括约890,000条记录，75列数据。 查看不同借贷状态的数据量 按月份统计借贷金额总量 按地区（州）统计借贷金额总量 借贷评级、期限和利率(默认实际利率)的关系分析 过程首先导入模块 12import pandas as pdfrom matplotlib import pyplot as plt 使用pandas的read_csv读取csv文件 1df = pd.read_csv('loan.csv', low_memory = False) 查看不同借贷状态的数据量pandas 的value_counts()函数可以对Series里面的每个值进行计数并且排序。返回series。 1234def get_loan_status(df): loan_status = df['loan_status'].value_counts() print(loan_status) return loan_status 按月份统计贷款总量首先把日期列中的月份提取，再按月份对贷款量分组，最后求和，返回series。to_datetime用于获取指定的日期时间 123456def get_total_loan_by_month(df): df['issue_d'] = pd.to_datetime(df['issue_d']).dt.month month_group = df['loan_amnt'].groupby(df['issue_d']) total_loan_by_month = month_group.sum() print(total_loan_by_month) return total_loan_by_month 按地区（州）统计借贷金额总量把数据按地区对贷款量分组，再求和，返回series。groupby是非常高效的分组h函数。 12345def get_total_loan_by_state(df): addr_state_group = df['loan_amnt'].groupby(df['addr_state']) total_loan_by_state = addr_state_group.sum() print(total_loan_by_state) return total_loan_by_state 借贷评级、期限和利率(默认实际利率)的关系分析评级为x轴，利率为y轴，绘制散点图，期限为点的颜色。 123456789101112def analysis(df): term = df['term'].tolist() int_rate = df['int_rate'].tolist() grade = df['grade'].tolist() colors = [] for item in term: colors.append(int(item[:2])) plt.scatter(grade, int_rate, c = colors, alpha = 0.5) plt.show() print(grade) print(term) print(int_rate) 绘制散点图效果如下： 项目地址loan-data-analysis]]></content>
       <categories>
         <category>python</category>
@@ -40,7 +40,7 @@
   </entry>
   <entry>
     <title><![CDATA[常用Markdown语法教程]]></title>
-    <url>%2Ftitle%2F</url>
+    <url>%2F2017-08-10-%E5%B8%B8%E7%94%A8MarkDown%E8%AF%AD%E6%B3%95%E6%95%99%E7%A8%8B.html</url>
     <content type="text"><![CDATA[什么是 Markdown ？ Markdown 的目标是实现「易读易写」。 可读性，无论如何，都是最重要的。一份使用 Markdown 格式撰写的文件应该可以直接以纯文本发布，并且看起来不会像是由许多标签或是格式指令所构成。Markdown 语法受到一些既有 text-to-HTML 格式的影响，包括 Setext、atx、Textile、reStructuredText、Grutatext 和 EtText，而最大灵感来源其实是纯文本电子邮件的格式。 总之， Markdown 的语法全由一些符号所组成，这些符号经过精挑细选，其作用一目了然。比如：在文字两旁加上星号，看起来就像强调。Markdown 的列表看起来，嗯，就是列表。Markdown 的区块引用看起来就真的像是引用一段文字，就像你曾在电子邮件中见过的那样。 常用语法1. 标题123# 一级标题## 二级标题###### 六级标题 1234一级标题============二级标题------------ 任何数量的=和-均有此效果。 2. 引用123&gt; ### 标题&gt; 引用文字&gt;&gt; 二级引用 效果： 标题引用文字 二级引用 3. 列表无序列表使用*、+或-作为标记 123* 北京* 上海* 广州 效果： 北京 上海 广州 有序列表1231. 北京2. 上海3. 广州 效果： 北京 上海 广州 4. 代码块​ 代码，左侧有一个制表符或四个空格。 更高级的代码块，支持四十一种编程语言的语法高亮的显示，行号显示。 123456789101112@requires_authorizationdef somefunc(param1='', param2=0): '''A docstring''' if param1 &gt; param2: # interesting print 'Greater' return (param2 - param1 + 1) or Noneclass SomeClass: pass&gt;&gt;&gt; message = '''interpreter... prompt''' 5. 链接[文本](链接) 示例： 我的博客 6. 插入图片使用 ![描述](图片链接地址) 插入图像。 示例： 7. 表格 项目 价格 数量 计算机 \$1600 5 手机 \$12 12 管线 \$1 234]]></content>
       <categories>
         <category>Markdown相关</category>
@@ -52,7 +52,7 @@
   </entry>
   <entry>
     <title><![CDATA[HELLO]]></title>
-    <url>%2Ftitle%2F</url>
+    <url>%2F2017-08-07-HELLO.html</url>
     <content type="text"><![CDATA[大家好，欢迎来到我的blog。]]></content>
   </entry>
 </search>
