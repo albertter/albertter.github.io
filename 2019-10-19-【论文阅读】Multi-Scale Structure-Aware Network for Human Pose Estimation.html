@@ -115,23 +115,29 @@
 
 
 
-  <meta name="description" content="个人博客，不定时分享心得。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="左岸光阴的博客">
-<meta property="og:url" content="https://albertter.github.io/tags/flask/index.html">
+  <meta name="description" content="动机基于DNN的姿态估计方法仍具有的问题 尺度不稳定性：大部分方法在某一个尺度上过拟合，使得某一个尺度的结果占据主导的地位，引起了尺度的不稳定，通常的方法是不断的前传各个尺度的图片进行测试，选取分数最高的结果。 缺乏结构先验。  方法 Multi-Scale Supervision Network设计MSS-net来学习多尺度的深度特征，在MSS-net的每个反卷积层上执行多个分层监督，每个层对应">
+<meta name="keywords" content="深度学习">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【论文阅读】Multi-Scale Structure-Aware Network for Human Pose Estimation">
+<meta property="og:url" content="https://albertter.github.io/2019-10-19-【论文阅读】Multi-Scale Structure-Aware Network for Human Pose Estimation.html">
 <meta property="og:site_name" content="左岸光阴的博客">
-<meta property="og:description" content="个人博客，不定时分享心得。">
+<meta property="og:description" content="动机基于DNN的姿态估计方法仍具有的问题 尺度不稳定性：大部分方法在某一个尺度上过拟合，使得某一个尺度的结果占据主导的地位，引起了尺度的不稳定，通常的方法是不断的前传各个尺度的图片进行测试，选取分数最高的结果。 缺乏结构先验。  方法 Multi-Scale Supervision Network设计MSS-net来学习多尺度的深度特征，在MSS-net的每个反卷积层上执行多个分层监督，每个层对应">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://albertter.github.io/images/network.png">
+<meta property="og:image" content="https://albertter.github.io/images/structureawareloss.png">
+<meta property="og:image" content="https://albertter.github.io/images/keypointmasking.png">
+<meta property="og:updated_time" content="2019-10-19T05:49:36.820Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="左岸光阴的博客">
-<meta name="twitter:description" content="个人博客，不定时分享心得。">
+<meta name="twitter:title" content="【论文阅读】Multi-Scale Structure-Aware Network for Human Pose Estimation">
+<meta name="twitter:description" content="动机基于DNN的姿态估计方法仍具有的问题 尺度不稳定性：大部分方法在某一个尺度上过拟合，使得某一个尺度的结果占据主导的地位，引起了尺度的不稳定，通常的方法是不断的前传各个尺度的图片进行测试，选取分数最高的结果。 缺乏结构先验。  方法 Multi-Scale Supervision Network设计MSS-net来学习多尺度的深度特征，在MSS-net的每个反卷积层上执行多个分层监督，每个层对应">
+<meta name="twitter:image" content="https://albertter.github.io/images/network.png">
 
 
 
 
 
 
-  <link rel="canonical" href="https://albertter.github.io/tags/flask/">
+  <link rel="canonical" href="https://albertter.github.io/2019-10-19-【论文阅读】Multi-Scale Structure-Aware Network for Human Pose Estimation.html">
 
 
 
@@ -141,7 +147,7 @@
   };
 </script>
 
-  <title>标签: flask | 左岸光阴的博客</title>
+  <title>【论文阅读】Multi-Scale Structure-Aware Network for Human Pose Estimation | 左岸光阴的博客</title>
   
 
 
@@ -188,7 +194,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -253,7 +259,7 @@
         
         
           
-          <li class="menu-item menu-item-tags menu-item-active">
+          <li class="menu-item menu-item-tags">
     <a href="/tags/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
   </li>
@@ -281,28 +287,6 @@
 
   
     
-
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
 
   
 
@@ -360,56 +344,253 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h2>flask<small>标签</small>
-        </h2>
-      </div>
+  
 
-      
-        
+  
+  
+  
+
+  
+    <div class="reading-progress-bar"></div>
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://albertter.github.io/2019-10-19-【论文阅读】Multi-Scale Structure-Aware Network for Human Pose Estimation.html">
 
-      <h3 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="左岸光阴">
+      <meta itemprop="description" content="个人博客，不定时分享心得。">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="左岸光阴的博客">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018-08-06-flask框架的简单使用.html" itemprop="url">
-              
-                <span itemprop="name">flask框架的简单使用</span>
-              
-            </a>
         
-      </h3>
+          <h2 class="post-title" itemprop="name headline">【论文阅读】Multi-Scale Structure-Aware Network for Human Pose Estimation
+              
+            
+          </h2>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-08-06T23:00:57+08:00" content="2018-08-06">
-          08-06
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
 
-    </header>
-  </article>
+            
+            
+            
 
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-10-19 12:53:04 / 修改时间：13:49:36" itemprop="dateCreated datePublished" datetime="2019-10-19T12:53:04+08:00">2019-10-19</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019-10-19-【论文阅读】Multi-Scale Structure-Aware Network for Human Pose Estimation.html#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019-10-19-【论文阅读】Multi-Scale Structure-Aware Network for Human Pose Estimation.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2019-10-19-【论文阅读】Multi-Scale Structure-Aware Network for Human Pose Estimation.html" class="leancloud_visitors" data-flag-title="【论文阅读】Multi-Scale Structure-Aware Network for Human Pose Estimation">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="动机"><a href="#动机" class="headerlink" title="动机"></a>动机</h2><h5 id="基于DNN的姿态估计方法仍具有的问题"><a href="#基于DNN的姿态估计方法仍具有的问题" class="headerlink" title="基于DNN的姿态估计方法仍具有的问题"></a>基于DNN的姿态估计方法仍具有的问题</h5><ol>
+<li>尺度不稳定性：大部分方法在某一个尺度上过拟合，使得某一个尺度的结果占据主导的地位，引起了尺度的不稳定，通常的方法是不断的前传各个尺度的图片进行测试，选取分数最高的结果。</li>
+<li>缺乏结构先验。</li>
+</ol>
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><p><img src="/images/network.png" alt="network"></p>
+<h5 id="Multi-Scale-Supervision-Network"><a href="#Multi-Scale-Supervision-Network" class="headerlink" title="Multi-Scale Supervision Network"></a>Multi-Scale Supervision Network</h5><p>设计MSS-net来学习多尺度的深度特征，在MSS-net的每个反卷积层上执行多个分层监督，每个层对应于一定的尺度。<br>1x1卷积用来匹配特征图的维度，ground-truch关键点特征图下采样，匹配相关的关键点热图。<br>MSS-net定位关键点和 attention model很相似。</p>
+<h5 id="Multi-Scale-Regression-Network"><a href="#Multi-Scale-Regression-Network" class="headerlink" title="Multi-Scale Regression Network"></a>Multi-Scale Regression Network</h5><p>MSR-net接在MSS-net后，用来全局优化多尺度关键点热图，提高估计的结构一致性。MSR-net将多比例尺的热图作为输入，并将它们与各自比例尺上的ground-truch关键点进行匹配。通过这种方式，回归网络可以有效地结合所有尺度的热图来细化估计的姿态。</p>
+<h5 id="Structure-Aware-Loss"><a href="#Structure-Aware-Loss" class="headerlink" title="Structure-Aware Loss"></a>Structure-Aware Loss</h5><p><img src="/images/structureawareloss.png" alt="loss"><br>在网络中，有两个地方使用了结构感知损失:(1)在MSS-net堆栈之间，作为一种中间监督手段，在定位关键点时加强结构一致性;(2)在MSR-net中查找全局一致的位姿配置。</p>
+<h5 id="Keypoint-Masking-Training"><a href="#Keypoint-Masking-Training" class="headerlink" title="Keypoint Masking Training"></a>Keypoint Masking Training</h5><p>数据中遮挡的情况较少，提出了一种数据增强方法，人工创建遮挡和添加多余图像。<br><img src="/images/keypointmasking.png" alt="masking"></p>
 
       
     </div>
 
+    
+
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="左岸光阴 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="左岸光阴 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>左岸光阴</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://albertter.github.io/2019-10-19-【论文阅读】Multi-Scale Structure-Aware Network for Human Pose Estimation.html" title="【论文阅读】Multi-Scale Structure-Aware Network for Human Pose Estimation">https://albertter.github.io/2019-10-19-【论文阅读】Multi-Scale Structure-Aware Network for Human Pose Estimation.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/深度学习/" rel="tag"># 深度学习</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018-08-06-flask框架的简单使用.html" rel="next" title="flask框架的简单使用">
+                <i class="fa fa-chevron-left"></i> flask框架的简单使用
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+  </div>
 
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
 
         </div>
         
@@ -430,8 +611,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -536,6 +726,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#动机"><span class="nav-number">1.</span> <span class="nav-text">动机</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#基于DNN的姿态估计方法仍具有的问题"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">基于DNN的姿态估计方法仍具有的问题</span></a></li></ol></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#方法"><span class="nav-number">2.</span> <span class="nav-text">方法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Multi-Scale-Supervision-Network"><span class="nav-number">2.0.0.1.</span> <span class="nav-text">Multi-Scale Supervision Network</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Multi-Scale-Regression-Network"><span class="nav-number">2.0.0.2.</span> <span class="nav-text">Multi-Scale Regression Network</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Structure-Aware-Loss"><span class="nav-number">2.0.0.3.</span> <span class="nav-text">Structure-Aware Loss</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Keypoint-Masking-Training"><span class="nav-number">2.0.0.4.</span> <span class="nav-text">Keypoint Masking Training</span></a></li></ol></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -708,6 +914,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.3.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.3.0"></script>
+
+
 
   
 
